@@ -19,12 +19,12 @@ while True:
     soup = BeautifulSoup(res.text, "lxml")
     w = soup.find_all("td",attrs={"class":"tit"})
     for i in range(len(array1)):
+        print("\n------\'{}\'------검색\n".format(array1[ii]))
         for index, news in enumerate(w):
             tt = news.find("a").get_text().strip()
             lk=news.find("a")["href"]
             if(tt.find(array1[ii])!=-1 ):
-                ii=ii+1
                 print("{}".format(tt))
                 print("  (링크 : {})".format(lk))
         ii=ii+1
-    time.sleep(5)
+    time.sleep(300)
