@@ -12,7 +12,7 @@ def title(j,l,k):
         res = requests.get(url)
         soup = BeautifulSoup(res.text, "lxml")
         w = soup.find("ul",attrs={"class":"tbl-body"}).find_all("li")
-        for k in range(len(k)):
+        for j in range(len(k)):
             print("\n------\'{}\'------검색\n".format(array1[ii]))
             for index, news in enumerate(w):
                 tt = news.find("a").get_text().strip()
